@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<LoadingScreen>
+  <screenSize>360, 508</screenSize>
+  <frameImage>
+    <name>resource:progressbar_background.png</name>
+    <offset>0, 0</offset>
+  </frameImage>
+  <trackbarImage>
+    <name>resource:loader_reveal.png</name>
+    <offset>29, 10</offset>
+  </trackbarImage>
+  <cursorImage>
+    <name>resource:cursor.png</name>
+    <offset>14, 0</offset>
+  </cursorImage>
+  <progressString>
+    <offset>100,20</offset>
+    <size>58, 13</size>
+  </progressString>
+</LoadingScreen>

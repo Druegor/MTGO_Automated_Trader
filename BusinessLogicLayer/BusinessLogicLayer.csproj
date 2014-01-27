@@ -1,0 +1,135 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{E06DD3A6-4E39-47D8-85A4-B323D47AF141}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>BusinessLogicLayer</RootNamespace>
+    <AssemblyName>BusinessLogicLayer</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <PlatformTarget>x86</PlatformTarget>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="LinqToExcel">
+      <HintPath>..\AutoItBot\packages\LinqToExcel.1.7.0\lib\LinqToExcel.dll</HintPath>
+    </Reference>
+    <Reference Include="log4net">
+      <HintPath>..\AutoItBot\packages\LinqToExcel.1.7.0\lib\log4net.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Remotion">
+      <HintPath>..\AutoItBot\packages\LinqToExcel.1.7.0\lib\Remotion.dll</HintPath>
+    </Reference>
+    <Reference Include="Remotion.Data.Linq">
+      <HintPath>..\AutoItBot\packages\LinqToExcel.1.7.0\lib\Remotion.Data.Linq.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Remotion.Interfaces">
+      <HintPath>..\AutoItBot\packages\LinqToExcel.1.7.0\lib\Remotion.Interfaces.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.Linq" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="ApplicationSettings.cs" />
+    <Compile Include="AutoItWrapper.cs" />
+    <Compile Include="CollectionImporter.cs" />
+    <Compile Include="Constants.cs" />
+    <Compile Include="Database\DatabaseInteractions.cs" />
+    <Compile Include="ImageDownloader\DownloadImage.cs" />
+    <Compile Include="Interfaces\IApplicationSettings.cs" />
+    <Compile Include="Interfaces\IMessageHandler.cs" />
+    <Compile Include="Interfaces\IMtgoLauncher.cs" />
+    <Compile Include="Interfaces\IPixelBasedVariables.cs" />
+    <Compile Include="Interfaces\ITradeFilterHandler.cs" />
+    <Compile Include="Interfaces\ITradeHandler.cs" />
+    <Compile Include="Interfaces\ITrader.cs" />
+    <Compile Include="Interfaces\ITransferHandler.cs" />
+    <Compile Include="Interfaces\IWindowManager.cs" />
+    <Compile Include="Interfaces\IMagicCardList.cs" />
+    <Compile Include="MagicCards\Levenshtein.cs" />
+    <Compile Include="MagicCards\MagicCardCollection.cs" />
+    <Compile Include="MagicCards\MagicCardList.cs" />
+    <Compile Include="Models\CollectionImportModel.cs" />
+    <Compile Include="Models\TransferModel.cs" />
+    <Compile Include="OCR\OCR.cs" />
+    <Compile Include="OCR\OcrImageArea.cs" />
+    <Compile Include="OCR\Tesseract.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <DependentUpon>Resources.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Trader\CommonBuyer.cs" />
+    <Compile Include="Trader\RareBulkBuyer.cs" />
+    <Compile Include="Trader\RareTrader.cs" />
+    <Compile Include="Trader\TraderBase.cs" />
+    <Compile Include="Trader\TransferBot.cs" />
+    <Compile Include="Trader\TransfererBot.cs" />
+    <Compile Include="Trader\YesBot.cs" />
+    <Compile Include="WishList.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\Framework\Framework.csproj">
+      <Project>{E077FFA2-80FD-4259-BD83-F771A9190096}</Project>
+      <Name>Framework</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\CardDataLayer\CardDataLayer.csproj">
+      <Project>{29EFEAF6-9565-451E-A94E-4D88A7604A0C}</Project>
+      <Name>CardDataLayer</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Appenders\" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

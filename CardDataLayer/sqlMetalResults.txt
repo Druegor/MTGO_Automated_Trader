@@ -1,0 +1,4 @@
+Microsoft (R) Database Mapping Generator 2008 version 4.0.30319.1
+for Microsoft (R) .NET Framework version 4.0
+Copyright (C) Microsoft Corporation. All rights reserved.
+

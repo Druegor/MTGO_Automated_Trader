@@ -1,0 +1,243 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{69088EE6-0757-4754-A0C1-3BDDD3FAB32A}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>AutoItBot</RootNamespace>
+    <AssemblyName>AutoItBot</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <TargetFrameworkProfile>
+    </TargetFrameworkProfile>
+    <FileAlignment>512</FileAlignment>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <PublishUrl>K:\temp\Bot\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>2</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <PublishWizardCompleted>true</PublishWizardCompleted>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestCertificateThumbprint>C3BD1FBFDD39A99DE37EBC2EA28FB9C74CFCF089</ManifestCertificateThumbprint>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestKeyFile>AutoItBot_TemporaryKey.pfx</ManifestKeyFile>
+  </PropertyGroup>
+  <PropertyGroup>
+    <GenerateManifests>true</GenerateManifests>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignManifests>true</SignManifests>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Doddle.Linq.Audit">
+      <HintPath>..\InputSimulator\Doddle.Linq.Audit.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.Linq" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AutoItCommands.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AutoItCommands.Designer.cs">
+      <DependentUpon>AutoItCommands.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BotHomeScreen.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BotHomeScreen.Designer.cs">
+      <DependentUpon>BotHomeScreen.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Handles\MessageHandler.cs" />
+    <Compile Include="Handles\TradeFilterHandler.cs" />
+    <Compile Include="Handles\WindowManager.cs" />
+    <Compile Include="MtgoLauncher.cs" />
+    <Compile Include="Service References\BotServices\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Handles\TradeHandler.cs" />
+    <Compile Include="PixelBasedVariables\ScreenLocations.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="TransferHandler.cs" />
+    <Compile Include="Updater\CollectionExporter.cs" />
+    <Compile Include="Updater\DeckCreator.cs" />
+    <Compile Include="Updater\Selector.cs" />
+    <Compile Include="Updater\TradeFileWriter.cs" />
+    <EmbeddedResource Include="AutoItCommands.resx">
+      <DependentUpon>AutoItCommands.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BotHomeScreen.resx">
+      <DependentUpon>BotHomeScreen.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="app.config">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Log4Net.config">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <None Include="Service References\BotServices\service.wsdl" />
+    <None Include="Service References\BotServices\service.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\BotServices\service1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\BotServices\System.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\BotServices\WcfMagicBotService4.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Tesseract-OCR\tessdata\configs\ambigs.train" />
+    <None Include="Tesseract-OCR\tessdata\configs\api_config" />
+    <None Include="Tesseract-OCR\tessdata\configs\box.train" />
+    <None Include="Tesseract-OCR\tessdata\configs\box.train.stderr" />
+    <None Include="Tesseract-OCR\tessdata\configs\digits" />
+    <None Include="Tesseract-OCR\tessdata\configs\inter" />
+    <None Include="Tesseract-OCR\tessdata\configs\kannada" />
+    <None Include="Tesseract-OCR\tessdata\configs\logfile" />
+    <None Include="Tesseract-OCR\tessdata\configs\makebox" />
+    <None Include="Tesseract-OCR\tessdata\configs\unlv" />
+    <None Include="Tesseract-OCR\tessdata\eng.traineddata">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Tesseract-OCR\tessdata\tessconfigs\batch" />
+    <None Include="Tesseract-OCR\tessdata\tessconfigs\batch.nochop" />
+    <None Include="Tesseract-OCR\tessdata\tessconfigs\matdemo" />
+    <None Include="Tesseract-OCR\tessdata\tessconfigs\msdemo" />
+    <None Include="Tesseract-OCR\tessdata\tessconfigs\nobatch" />
+    <None Include="Tesseract-OCR\tessdata\tessconfigs\segdemo" />
+    <None Include="Tesseract-OCR\tesseract.log" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.0,Profile=Client">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4 Client Profile %28x86 and x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Windows.Installer.3.1">
+      <Visible>False</Visible>
+      <ProductName>Windows Installer 3.1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\Framework\Framework.csproj">
+      <Project>{E077FFA2-80FD-4259-BD83-F771A9190096}</Project>
+      <Name>Framework</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\BusinessLogicLayer\BusinessLogicLayer.csproj">
+      <Project>{E06DD3A6-4E39-47D8-85A4-B323D47AF141}</Project>
+      <Name>BusinessLogicLayer</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\CardDataLayer\CardDataLayer.csproj">
+      <Project>{29EFEAF6-9565-451E-A94E-4D88A7604A0C}</Project>
+      <Name>CardDataLayer</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="LoadingScreen.xml" />
+    <None Include="Service References\BotServices\configuration91.svcinfo" />
+    <None Include="Service References\BotServices\configuration.svcinfo" />
+    <None Include="Service References\BotServices\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <Content Include="Tesseract-OCR\gzip.exe">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Tesseract-OCR\leptonlib.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Tesseract-OCR\tesseract.exe">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadataStorage Include="Service References\BotServices\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

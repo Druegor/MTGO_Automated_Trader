@@ -1,0 +1,2 @@
+"C:\Program Files (x86)\Microsoft SDKs\Windows\v7.0A\bin\NETFX 4.0 Tools\SqlMetal.exe" /server:192.168.0.194\SQLEXPRESS /database:MagicOnlineBot /code:MagicOnlineBotDb.cs /namespace:CardDataLayer /context:MagicOnlineBotDb /sprocs /pluralize  > sqlMetalResults.txt
+Pause
