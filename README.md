@@ -1,6 +1,9 @@
 Magic the gathering automated trader
 =====================
 
+For Current Version Not Beta Version
+---
+
 An automated bot to initiate and respond to trades through the MTGO client.  Initially created with AutoIt for the second version of the MTGO client I've decided to upgrade the client to C#.  It has gone through many different iterations.  The most recent has been to start the process of upgrading all the data calls away from Linq to SQL towards Dapper.  Its not quite as simple in certain circumstances but it is much faster and is a cleaner way to ensure the database transactions are happening how I want them.  
 
 A few of the tasks I had planned for the bot before I wanted to release it
