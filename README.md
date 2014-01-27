@@ -11,3 +11,7 @@ A few of the tasks I had planned for the bot before I wanted to release it
 - Finish the transfer functionality so that the bot can move cards between multiple accounts, this functionality was starting to flesh out but got stalled.  
 
 Another note is that I use a framework library for logging that contains a few other pieces of functionality that I can not share in this library.  So I or someone else will most likley need to fix this before things will begin to compile. 
+
+I will try to keep updates and anything else of note updated on my [blog] which hopefully will not go down again.
+
+  [blog]: http://blog.druegor.com
